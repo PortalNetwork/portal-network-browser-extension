@@ -4,12 +4,12 @@ Portal Network broswer extension can use your browser to interact with IPFS cont
   
 Portal Network extension can parse IPFS hashes and redirects your browser to content with the IPFS gateway(`gateway.ipfs.io`).
 
-#### Development 
+## Development 
 ```
 npm install
 ```
 
-#### Build for Publishing
+## Build for Publishing
 ```
 npm run p
 ```
