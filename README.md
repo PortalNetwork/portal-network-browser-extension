@@ -9,7 +9,7 @@ Portal Network extension can parse IPFS hashes and redirects your browser to con
 npm install
 ```
 
-#### Build
+#### Build for Publishing
 ```
 npm run p
 ```
