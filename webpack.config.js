@@ -8,7 +8,8 @@ const config = {
         background: 'background',
         loading: 'loading',
         popup: 'popup',
-        error: 'error'
+        error: 'error',
+        not404: 'not404'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
