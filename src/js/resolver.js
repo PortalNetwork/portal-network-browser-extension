@@ -47,12 +47,9 @@ var ens = function(name) {
       }
 
       if (contentHash) {
-        // Remove 0x prefix
-        hex = contentHash.substring(2)
-        // Convert to buffer
-        buf = multihash.fromHexString(hex)
-        // Multihash encode and convert to base58
-        resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
+        let hex = contentHash.substring(2)
+        let buf = multihash.fromHexString(hex)
+        resolve(multihash.toB58String(buf))
       } else {
         reject('fisk')
       }
@@ -75,12 +72,9 @@ var ecns = function(name) {
       }
 
       if (contentHash) {
-        // Remove 0x prefix
-        hex = contentHash.substring(2)
-        // Convert to buffer
-        buf = multihash.fromHexString(hex)
-        // Multihash encode and convert to base58
-        resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
+        let hex = contentHash.substring(2)
+        let buf = multihash.fromHexString(hex)
+        resolve(multihash.toB58String(buf))
       } else {
         reject('fisk')
       }
