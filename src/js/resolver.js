@@ -24,15 +24,16 @@ function ens(name) {
     .then(contentHash => {
       if (contentHash === '0x0000000000000000000000000000000000000000000000000000000000000000') reject(null)
       if (contentHash) {
-        hex = contentHash.substring(2)
-        buf = multihash.fromHexString(hex)
-        resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
+        let hex = contentHash.substring(2)
+        let buf = multihash.fromHexString(hex)
+        resolve(multihash.toB58String(buf))
       } else {
         reject('fisk')
       }
     })
   })
 }
+
 function ecns(name) {
   let web3 = new Web3(new Web3.providers.HttpProvider("https://mewapi.epool.io/"))
   let hash = namehash.hash(name)
@@ -43,15 +44,16 @@ function ecns(name) {
     .then(contentHash => {
       if (contentHash === '0x0000000000000000000000000000000000000000000000000000000000000000') reject(null)
       if (contentHash) {
-        hex = contentHash.substring(2)
-        buf = multihash.fromHexString(hex)
-        resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
+        let hex = contentHash.substring(2)
+        let buf = multihash.fromHexString(hex)
+        resolve(multihash.toB58String(buf))
       } else {
         reject('fisk')
       }
     })
   })
 }
+
 module.exports.resolve = function(name) {
   let path = name.split(".");
   let tld = path[path.length - 1];

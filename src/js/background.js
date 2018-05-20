@@ -22,7 +22,6 @@ extension.webRequest.onBeforeRequest.addListener(details => {
         extension.tabs.update(tab.id, {url: url})
         return err
       })
-
     })
     .catch(err => {
       let nameWithoutTld = name.substring(0, name.lastIndexOf('.'))
