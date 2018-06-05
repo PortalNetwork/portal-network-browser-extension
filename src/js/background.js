@@ -10,7 +10,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     }, 60000);
     
     resolver.resolve(name).then(ipfsHash => {
-      let url = "https://gateway.ipfs.io/ipfs/" + ipfsHash
+      let url = "https://ipfs.infura.io/ipfs/" + ipfsHash
       return fetch(url, {method: "HEAD"})
       .then(response => response.status)
       .then(statusCode => {
@@ -18,7 +18,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
         extension.tabs.update(tab.id, {url: url})
       })
       .catch(err => {
-        url = "https://gateway.ipfs.io/ipfs/" + ipfsHash
+        url = "https://ipfs.infura.io/ipfs/" + ipfsHash
         extension.tabs.update(tab.id, {url: url})
         return err
       })

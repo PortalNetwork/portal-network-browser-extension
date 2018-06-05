@@ -28,13 +28,13 @@ function ens(name) {
         buf = multihash.fromHexString(hex)
         resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
       } else {
-        reject('fisk')
+        reject(null)
       }
     })
   })
 }
 function ecns(name) {
-  let web3 = new Web3(new Web3.providers.HttpProvider("https://mewapi.epool.io/"))
+  let web3 = new Web3(new Web3.providers.HttpProvider("https://etc-geth.0xinfra.com"))
   let hash = namehash.hash(name)
   Registrar = new web3.eth.Contract(abi.registrar, REGISTRAR_ECNS_MAIN_NET)
   return new Promise((resolve, reject) => {
@@ -47,7 +47,7 @@ function ecns(name) {
         buf = multihash.fromHexString(hex)
         resolve(multihash.toB58String(multihash.encode(buf, 'sha2-256')))
       } else {
-        reject('fisk')
+        reject(null)
       }
     })
   })
