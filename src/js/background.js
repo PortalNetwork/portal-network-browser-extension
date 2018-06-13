@@ -2,14 +2,16 @@ const resolver = require('./resolver.js');
 const extension = require('extensionizer');
 extension.webRequest.onBeforeRequest.addListener(details => {
   let name = details.url.substring(7, details.url.length - 1)
+  let clearTime = null
   extension.tabs.getSelected(null, tab => {
     extension.tabs.update(tab.id, { url: "loading.html" })
 
-    setTimeout(() => {
-        return extension.tabs.update(tab.id, { url: "404.html" });
-    }, 60000);
+    clearTime = setTimeout(() => {
+      return extension.tabs.update(tab.id, { url: '404.html' })
+    }, 60000)
     
     resolver.resolve(name).then(ipfsHash => {
+      clearTimeout(clearTime)
       let url = "https://ipfs.infura.io/ipfs/" + ipfsHash
       return fetch(url, {method: "HEAD"})
       .then(response => response.status)
@@ -24,9 +26,9 @@ extension.webRequest.onBeforeRequest.addListener(details => {
       })
     })
     .catch(err => {
-      let nameWithoutTld = name.substring(0, name.lastIndexOf('.'))
+      clearTimeout(clearTime)
       extension.tabs.update(tab.id, {url: "error.html?name=" + name})
     })
   })
   return {cancel: true}
-}, {urls: ["*://*.eth/", "*://*.etc/"]})
+}, {urls: ["*://*.eth/", "*://*.etc/", "*://*.wan/"]})

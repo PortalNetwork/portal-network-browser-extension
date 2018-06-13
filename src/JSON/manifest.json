@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Portal Network",
   "description": "Portal Network Browser Extension",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "browser_action": {
     "default_icon": "res/128x128.png",
     "default_popup": "popup.html"
@@ -19,7 +19,8 @@
     "storage",
     "webRequest",
     "*://*.eth/",
-    "*://*.etc/"
+    "*://*.etc/",
+    "*://*.wan/"
   ],
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "web_accessible_resources": [
