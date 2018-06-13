@@ -58,7 +58,7 @@ function ecns(name) {
 function wns(name) {
   let web3 = new Web3(new Web3.providers.HttpProvider("http://wanchain.portal.network"))
   let hash = namehash.hash(name)
-  Registrar = new web3.eth.Contract(abi.registrar, REGISTRAR_WAN_MAIN_NET)
+  Registrar = new web3.eth.Contract(abi.registrar, REGISTRAR_WNS_MAIN_NET)
   return new Promise((resolve, reject) => {
     Resolver = new web3.eth.Contract(abi.resolver, '')
     Resolver.methods.content(hash).call()
