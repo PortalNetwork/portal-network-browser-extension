@@ -3,7 +3,7 @@ const extension = require('extensionizer');
 extension.webRequest.onBeforeRequest.addListener(details => {
   let name = details.url.substring(7, details.url.length - 1)
   let clearTime = null
-  extension.tabs.getSelected(null, tab => {
+  extension.tabs.query({currentWindow: true, active: true}, tab => {
     extension.tabs.update(tab.id, { url: "loading.html" })
 
     clearTime = setTimeout(() => {
