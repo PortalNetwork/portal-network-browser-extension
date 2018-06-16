@@ -1,13 +1,13 @@
 {
   "name": "portal-network-extension",
-  "version": "0.2.0",
+  "version": "0.3.6",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack",
-    "w": "NODE_ENV=development webpack --watch --mode development",
-    "d": "NODE_ENV=development webpack-dev-server --mode development",
-    "p": "NODE_ENV=production webpack -p --mode production"
+    "watch": "NODE_ENV=development webpack --watch --mode development",
+    "dev": "NODE_ENV=development webpack-dev-server --mode development",
+    "prod": "NODE_ENV=production webpack -p --mode production"
   },
   "author": "Phyrex Tsai",
   "license": "MIT",
