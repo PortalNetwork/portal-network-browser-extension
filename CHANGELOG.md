@@ -1,5 +1,13 @@
 # Change Log
 
+## [0.3.8] - 2018-06-20
+
+Add new blockchain domain.
+Domain support:
+- .eth
+- .etc
+- .wan
+
 ## [0.2.0] - 2018-03-04
 
 Add new blockchain domain.  
