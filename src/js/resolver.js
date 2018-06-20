@@ -58,11 +58,13 @@ function ecns(name) {
 function wns(name) {
   let web3 = new Web3(new Web3.providers.HttpProvider("http://wanchain.portal.network"))
   let hash = namehash.hash(name)
+  console.log('hash', hash)
   Registrar = new web3.eth.Contract(abi.registrar, REGISTRAR_WNS_MAIN_NET)
   return new Promise((resolve, reject) => {
-    Resolver = new web3.eth.Contract(abi.resolver, '')
+    Resolver = new web3.eth.Contract(abi.resolver, '0xd5bbfe34585bdb92107ad5808dd1a3df1d4d3014')
     Resolver.methods.content(hash).call()
     .then(contentHash => {
+      console.log('contentHash', contentHash);
       if (contentHash === '0x0000000000000000000000000000000000000000000000000000000000000000') reject(null)
       if (contentHash) {
         hex = contentHash.substring(2)
