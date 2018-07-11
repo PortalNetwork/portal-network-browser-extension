@@ -1,8 +1,13 @@
 const resolver = require('./resolver.js');
 const extension = require('extensionizer');
+const parse = require('url-parse');
+
+const gateway = 'ipfs.portal.network/ipfs/'
+
 extension.webRequest.onBeforeRequest.addListener(details => {
-  let name = details.url.substring(7, details.url.length - 1)
+  const URL = parse(details.url, true);
   let clearTime = null
+  let name = URL.hostname;
   extension.tabs.query({currentWindow: true, active: true}, tab => {
     extension.tabs.update(tab.id, { url: "loading.html" })
 
@@ -12,7 +17,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     
     resolver.resolve(name).then(ipfsHash => {
       clearTimeout(clearTime)
-      let url = "https://ipfs.infura.io/ipfs/" + ipfsHash
+      let url = URL.protocol + '//' + gateway + ipfsHash + URL.pathname
       return fetch(url, {method: "HEAD"})
       .then(response => response.status)
       .then(statusCode => {
@@ -20,7 +25,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
         extension.tabs.update(tab.id, {url: url})
       })
       .catch(err => {
-        url = "https://ipfs.infura.io/ipfs/" + ipfsHash
+        let url = URL.protocol + '//' + gateway + ipfsHash + URL.pathname
         extension.tabs.update(tab.id, {url: url})
         return err
       })
@@ -31,4 +36,4 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     })
   })
   return {cancel: true}
-}, {urls: ["*://*.eth/", "*://*.etc/", "*://*.wan/"]})
+}, {urls: ["*://*.eth/", '*://*.eth/*', "*://*.etc/", '*://*.etc/*', "*://*.wan/", '*://*.wan/*']})

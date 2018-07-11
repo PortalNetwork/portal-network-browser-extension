@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Portal Network",
   "description": "Portal Network Browser Extension",
-  "version": "0.3.8",
+  "version": "0.3.9",
   "browser_action": {
     "default_icon": "res/128x128.png",
     "default_popup": "popup.html"
