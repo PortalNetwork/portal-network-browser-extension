@@ -2,12 +2,22 @@ const resolver = require('./resolver.js');
 const extension = require('extensionizer');
 const parse = require('url-parse');
 
-const gateway = 'ipfs.portal.network/ipfs/'
+const portalNetwork = 'ipfs.portal.network/ipfs/'
+const infura = 'ipfs.infura.io/ipfs/'
 
 extension.webRequest.onBeforeRequest.addListener(details => {
   const URL = parse(details.url, true);
   let clearTime = null
   let name = URL.hostname;
+  let gateway = '';
+  // protocol
+  if (URL.protocol === 'https:') {
+    gateway = URL.protocol + '//' + infura;
+  } else if (URL.protocol === 'http:') {
+    gateway = URL.protocol + '//' + portalNetwork;
+  } else {
+    return extension.tabs.update(tab.id, { url: '404.html' })
+  }
   extension.tabs.query({currentWindow: true, active: true}, tab => {
     extension.tabs.update(tab.id, { url: "loading.html" })
 
@@ -17,7 +27,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     
     resolver.resolve(name).then(ipfsHash => {
       clearTimeout(clearTime)
-      let url = URL.protocol + '//' + gateway + ipfsHash + URL.pathname
+      let url = gateway + ipfsHash + URL.pathname
       return fetch(url, {method: "HEAD"})
       .then(response => response.status)
       .then(statusCode => {
@@ -25,7 +35,7 @@ extension.webRequest.onBeforeRequest.addListener(details => {
         extension.tabs.update(tab.id, {url: url})
       })
       .catch(err => {
-        let url = URL.protocol + '//' + gateway + ipfsHash + URL.pathname
+        let url = gateway + ipfsHash + URL.pathname
         extension.tabs.update(tab.id, {url: url})
         return err
       })
