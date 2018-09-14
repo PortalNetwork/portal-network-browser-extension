@@ -8,7 +8,7 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["js/background.js"]
+    "scripts": ["background.js"]
   },
   "icons": {
     "48": "assets/48x48.png",

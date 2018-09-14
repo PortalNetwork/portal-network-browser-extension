@@ -14,7 +14,7 @@ const config = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].js?[hash:8]',
+        filename: '[name].js?[hash:8]',
         publicPath: process.env.NODE_ENV === "development" ? "/" : "./"
     },
     optimization: {

@@ -1,14 +1,14 @@
 const resolver = require('./lib/resolver.js');
 const extension = require('extensionizer');
 const parse = require('url-parse');
-
 const portalNetwork = 'ipfs.portal.network/ipfs/'
 const infura = 'ipfs.infura.io/ipfs/'
-
+console.log('-==========-');
 extension.webRequest.onBeforeRequest.addListener(details => {
     const URL = parse(details.url, true);
-    let clearTime = null
+    console.log('URL:',URL);
     let name = URL.hostname;
+    console.log('name:',name);
     let gateway = '';
     // protocol
     if (URL.protocol === 'https:') {
@@ -18,15 +18,13 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     } else {
         return extension.tabs.update(tab.id, { url: '404.html' })
     }
+
+    const NameUel = details.url.substring(7, details.url.length - 1)
+    console.log('NameUel:',NameUel);
+
     extension.tabs.query({ currentWindow: true, active: true }, tab => {
-        extension.tabs.update(tab.id, { url: "loading.html" })
-
-        clearTime = setTimeout(() => {
-            return extension.tabs.update(tab.id, { url: '404.html' })
-        }, 60000)
-
+        extension.tabs.update(tab.id, { url: `loading.html?tabid=${tab[0].id}` })
         resolver.resolve(name).then(ipfsHash => {
-            clearTimeout(clearTime)
             let url = gateway + ipfsHash + URL.pathname
             return fetch(url, { method: "HEAD" })
                 .then(response => response.status)
@@ -41,7 +39,6 @@ extension.webRequest.onBeforeRequest.addListener(details => {
                 })
         })
         .catch(err => {
-            clearTimeout(clearTime)
             extension.tabs.update(tab.id, { url: "error.html?name=" + name })
         })
     })
