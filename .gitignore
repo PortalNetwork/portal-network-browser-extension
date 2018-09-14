@@ -6,3 +6,4 @@ app
 .vscode
 *.lnk
 /.sass-cache
+old
