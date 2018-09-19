@@ -115,7 +115,7 @@ const config = {
             chunks: [ 'popup' ],
         }),
         new HtmlWebpackPlugin({
-            title: 'Portal Network',
+            title: 'Portal Network | loading',
             filename: 'loading.html',
             template: 'template/loading.html',
             chunks: [ 'loading' ],

@@ -1,24 +1,36 @@
 <script>
 import LogingLogo from "loginglogo.svg";
+import extension from "extensionizer";
 export default {
     components: {
         LogingLogo
     },
-    data(){
-        return {
-
-        };
-    },
-    watch:{
-    },
-    computed:{
-    },
     methods:{
-    },
-    created(){
+        UrlSearch () {
+            var strUrl = location.search
+            var getPara, ParaVal
+            var aryPara = []
+            if (strUrl.indexOf('?') !== -1) {
+                var getSearch = strUrl.split('?')
+                getPara = getSearch[1].split('&')
+                for (var i = 0; i < getPara.length; i++) {
+                        ParaVal = getPara[i].split('=')
+                        aryPara.push(ParaVal[0])
+                        aryPara[ParaVal[0]] = ParaVal[1]
+                }
+            }
+            return aryPara
+        },
+        updateUrl404(){
+            extension.tabs.update(tabid, { url: '404.html' });
+        }
     },
     mounted(){
-        
+        const tabid = this.UrlSearch()['tabid'];
+        if (tabid === 'undefined') return this.updateUrl404();
+        setTimeout(() => {
+            this.updateUrl404();
+        }, 60000)
     }
 };
 </script>

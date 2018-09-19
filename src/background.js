@@ -1,10 +1,8 @@
 const resolver = require('./lib/resolver.js');
 const parse = require('url-parse');
-
 const extension = require('extensionizer');
 const portalNetwork = 'ipfs.portal.network/ipfs/';
 const infura = 'ipfs.infura.io/ipfs/';
-
 extension.webRequest.onBeforeRequest.addListener(details => {
     const URL = parse(details.url, true);
     let name = URL.hostname;
