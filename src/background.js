@@ -1,16 +1,15 @@
 const resolver = require('./lib/resolver.js');
-const extension = require('extensionizer');
 const parse = require('url-parse');
-const portalNetwork = 'ipfs.portal.network/ipfs/'
-const infura = 'ipfs.infura.io/ipfs/'
-console.log('-==========-');
+
+const extension = require('extensionizer');
+const portalNetwork = 'ipfs.portal.network/ipfs/';
+const infura = 'ipfs.infura.io/ipfs/';
+
 extension.webRequest.onBeforeRequest.addListener(details => {
     const URL = parse(details.url, true);
-    console.log('URL:',URL);
     let name = URL.hostname;
-    console.log('name:',name);
     let gateway = '';
-    // protocol
+    
     if (URL.protocol === 'https:') {
         gateway = URL.protocol + '//' + infura;
     } else if (URL.protocol === 'http:') {
@@ -20,7 +19,6 @@ extension.webRequest.onBeforeRequest.addListener(details => {
     }
 
     const NameUel = details.url.substring(7, details.url.length - 1)
-    console.log('NameUel:',NameUel);
 
     extension.tabs.query({ currentWindow: true, active: true }, tab => {
         extension.tabs.update(tab.id, { url: `loading.html?tabid=${tab[0].id}` })

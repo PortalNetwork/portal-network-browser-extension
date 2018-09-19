@@ -17,18 +17,6 @@ const config = {
         filename: '[name].js?[hash:8]',
         publicPath: process.env.NODE_ENV === "development" ? "/" : "./"
     },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /node_modules/,
-                    name: 'vendor',
-                    chunks: 'initial',
-                    enforce: true
-                }
-            }
-        }
-    },
     resolve: {
         alias: {
             vue: process.env.NODE_ENV === "development" ? 'vue/dist/vue.js' : 'vue/dist/vue.min.js'
@@ -37,6 +25,7 @@ const config = {
             path.resolve('src'),
             path.resolve('src/images'),
             path.resolve('src/components'),
+            path.resolve('src/assets'),
             path.resolve('node_modules')
         ],
         extensions: ['.js']
@@ -57,6 +46,10 @@ const config = {
                     }
                     
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: 'vue-svg-loader',
             },
             {
                 test: /\.(vue)$/,
@@ -106,7 +99,11 @@ const config = {
                     'css-loader',
                     'postcss-loader'
                 ]
-            }
+            },
+            // {
+            //     test: /\.svg$/,
+            //     loader: 'svg-inline-loader'
+            // }
         ]
     },
     plugins: [
@@ -115,7 +112,13 @@ const config = {
             title: 'Portal Network',
             filename: 'popup.html',
             template: 'template/popup.html',
-            chunks: [ 'vendor', 'popup' ],
+            chunks: [ 'popup' ],
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Portal Network',
+            filename: 'loading.html',
+            template: 'template/loading.html',
+            chunks: [ 'loading' ],
         }),
         new CopyWebpackPlugin([
             { from: 'assets', to: 'assets' },

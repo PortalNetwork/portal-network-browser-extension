@@ -7,8 +7,8 @@ const REGISTRAR_ENS_MAIN_NET = "0x314159265dd8dbb310642f98f50c066173c1259b"
 const REGISTRAR_ECNS_MAIN_NET = "0xcb177520ACa646881D53909b456A9B2B730391f0"
 const REGISTRAR_WNS_MAIN_NET = "0x48859467c329854af6ecc363c8ddb393b911586b"
 const abi = {
-  registrar: JSON.parse(require('./abi/registrar.js')),
-  resolver: JSON.parse(require('./abi/resolver.js'))
+  registrar: require('./abi/registrar.js'),
+  resolver: require('./abi/resolver.js')
 }
 
 function ens(name) {

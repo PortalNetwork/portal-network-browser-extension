@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="119px" height="129px" viewBox="0 0 119 129" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>extension logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0.000206181139 0.0180408497 111.738786 0.0180408497 111.738786 64.530547 0.000206181139 64.530547"></polygon>
+        <polygon id="path-3" points="0.0305663538 0.171516935 7.01428234 0.171516935 7.01428234 44.5239149 0.0305663538 44.5239149"></polygon>
+    </defs>
+    <g id="Extension" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="extension-page" transform="translate(-130.000000, -49.000000)">
+            <g id="extension-logo" transform="translate(130.000000, 48.597156)">
+                <path d="M23.8093852,74.5875541 L23.7733036,74.5156484 C23.7676335,74.5182257 23.759644,74.5210608 23.7537164,74.5238957 C23.7508814,74.5238957 23.7508814,74.5267307 23.7483042,74.5267307 L23.8093852,74.5875541 Z" id="Stroke-1" stroke="#6D6E70" stroke-width="0.594059406"></path>
+                <polygon id="Fill-3" fill="#95C9E4" fill-rule="nonzero" points="112.06633 32.4106507 56.1518092 64.967168 56.061605 129.299806 112.019939 97.4927581"></polygon>
+                <polygon id="Fill-5" fill="#648393" fill-rule="nonzero" points="0.327595794 32.8428064 0.372440192 97.147353 56.0619657 129.299755 56.0619657 64.9952086"></polygon>
+                <g id="Group-9" transform="translate(0.327467, 0.436698)">
+                    <g id="Fill-7-Clipped">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="Fill-7" fill="#C7DBE6" fill-rule="nonzero" mask="url(#mask-2)" points="55.869367 0.018015077 0.000206181139 32.2742811 55.824265 64.530547 111.738786 31.9740298"></polygon>
+                    </g>
+                </g>
+                <polygon id="Fill-10" fill="#648393" fill-rule="nonzero" points="84.098477 121.259954 77.1566158 117.227824 77.1566158 76.9075559 84.1402287 80.9396857"></polygon>
+                <path d="M77.1567447,80.6834026 L63.1804984,88.7474046 L66.6894437,90.7731343 C68.839913,92.0151179 71.4893406,92.0164066 73.6410985,90.7770002 L77.1567447,88.7525591 L77.1567447,80.6834026 Z" id="Fill-12" fill="#404041" fill-rule="nonzero"></path>
+                <polygon id="Fill-14" fill="#404041" fill-rule="nonzero" points="109.333038 62.1093428 98.099001 68.5872964 98.099001 76.6512985 105.091377 72.624323"></polygon>
+                <polygon id="Fill-16" fill="#C7DBE6" fill-rule="nonzero" points="105.091351 68.8433476 98.1074803 64.8114754 77.1566415 76.9076073 84.1402545 80.9397373"></polygon>
+                <polygon id="Fill-18" fill="#404041" fill-rule="nonzero" points="70.0292431 113.195952 56.0620173 121.259954 42.0945337 113.195952 42.0945337 121.235728 56.0617596 129.299729 70.0292431 121.259954"></polygon>
+                <polygon id="Fill-20" fill="#404041" fill-rule="nonzero" points="98.2628635 97.4122186 98.2211118 105.476478 112.02932 97.4923714 112.02932 89.3482164"></polygon>
+                <polygon id="Fill-22" fill="#404041" fill-rule="nonzero" points="14.2948989 97.0676383 14.3363929 105.13164 0.507308429 97.1475335 0.507308429 89.1072423"></polygon>
+                <polygon id="Fill-24" fill="#C7DBE6" fill-rule="nonzero" points="49.1788147 68.8886301 49.1682479 100.978147 14.2499256 80.8180131 7.26605502 68.7218811 7.30754898 44.6337387"></polygon>
+                <polygon id="Fill-26" fill="#C7DBE6" fill-rule="nonzero" points="49.1788147 68.8886301 56.1626853 64.9606217 14.3022441 40.7923263 7.30754898 44.6337387"></polygon>
+                <polygon id="Fill-28" fill="#C7DBE6" fill-rule="nonzero" points="111.95208 32.4744638 118.93595 28.4418184 77.0337576 4.25032768 69.9138075 8.36080641"></polygon>
+                <polygon id="Fill-30" fill="#95C9E4" fill-rule="nonzero" points="49.1682479 101.073738 56.1521185 105.103806 56.1518608 64.9672969 49.1788147 68.8886044"></polygon>
+                <g id="Group-34" transform="translate(111.923008, 28.271152)">
+                    <g id="Fill-32-Clipped">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="path-3"></g>
+                        <polygon id="Fill-32" fill="#95C9E4" fill-rule="nonzero" mask="url(#mask-4)" points="0.0305663538 44.5239149 7.01443698 32.4275251 7.01443698 0.171516935 0.0305663538 4.20364682"></polygon>
+                    </g>
+                </g>
+                <polygon id="Fill-35" fill="#FFFFFF" fill-rule="nonzero" points="105.095139 80.9245056 98.0421981 84.9566355 98.0421981 93.0208953 104.980967 93.0208953 112.009424 93.0208953 104.980967 88.9645391"></polygon>
+                <polygon id="Fill-37" fill="#A1B6C2" fill-rule="nonzero" points="84.1402802 80.9396084 84.0985286 121.259876 105.091377 109.163744 105.091377 68.8432187"></polygon>
+                <polygon id="Fill-39" fill="#A1B6C2" fill-rule="nonzero" points="111.93873 105.157593 112.028934 113.169792 97.8153216 121.234053 97.8570733 113.169792"></polygon>
+                <polygon id="Fill-41" fill="#C7DBE6" fill-rule="nonzero" points="111.932931 105.157593 105.105242 101.151494 84.1067242 113.192215 97.8512745 113.169792"></polygon>
+                <polygon id="Fill-43" fill="#648393" fill-rule="nonzero" points="97.8244451 121.234027 84.0984512 121.260057 84.1066985 113.192189 97.8661968 113.169767"></polygon>
+                <polygon id="Fill-45" fill="#FFFFFF" fill-rule="nonzero" points="77.0880348 97.0825091 70.0353512 101.114639 70.0353512 109.178899 76.9738619 109.178899 84.002577 109.178899 76.9738619 105.122543"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
