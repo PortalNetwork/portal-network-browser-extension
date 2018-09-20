@@ -1,6 +1,7 @@
-function injectName(){
-  let index = location.href.lastIndexOf("?name=")
-  let name = location.href.slice(index + 6)
-  document.getElementById("name").innerHTML = name;
-}
-injectName()
+import Vue from 'vue'
+import ErrorPage from 'Error.vue';
+import './scss/global/global.scss';
+new Vue({
+    el: '#app',
+    render: h=>h(ErrorPage),
+});

@@ -120,6 +120,12 @@ const config = {
             template: 'template/loading.html',
             chunks: [ 'loading' ],
         }),
+        new HtmlWebpackPlugin({
+            title: 'Portal Network | Error',
+            filename: 'error.html',
+            template: 'template/error.html',
+            chunks: [ 'error' ],
+        }),
         new CopyWebpackPlugin([
             { from: 'assets', to: 'assets' },
             { from: 'json', to: './' },
