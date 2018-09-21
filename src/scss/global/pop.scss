@@ -14,7 +14,9 @@ img{
 }
 html,body{
 	width: 100%;
-	height: 100%;
+	height: 600px;
+	overflow: auto;
+	background-color: #0042b4;
 }
 a{
     cursor: pointer;
