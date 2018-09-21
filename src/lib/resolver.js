@@ -1,5 +1,4 @@
 import { BNS } from "./Registrar";
-const ResolverInserface = require('lib/resolverInserface');
 const tldArr = ['eth', 'etc', 'wan'];
 
 function InquireIpfs(tld, name) {

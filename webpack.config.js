@@ -126,6 +126,12 @@ const config = {
             template: 'template/error.html',
             chunks: [ 'error' ],
         }),
+        new HtmlWebpackPlugin({
+            title: 'Portal Network | 404',
+            filename: '404.html',
+            template: 'template/error.html',
+            chunks: [ 'not404' ],
+        }),
         new CopyWebpackPlugin([
             { from: 'assets', to: 'assets' },
             { from: 'json', to: './' },
