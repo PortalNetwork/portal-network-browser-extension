@@ -8,9 +8,10 @@
         font-size: 12px;
         text-align: center;
         margin-top: 30px;
-        color: #4d4d4f;
+        font-family: Roboto;
+        color: #ffffff;
         >a{
-            color: #648393;
+            color: #fff;
             text-decoration: underline;
         }
     }
