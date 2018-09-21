@@ -22,3 +22,8 @@ npm run watch
 ```
 npm run deploy
 ```
+
+## Unit Test
+```
+npm run test
+```
