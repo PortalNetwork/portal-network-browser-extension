@@ -15,10 +15,10 @@ Resolve from ENS, ECNS, WNS Public Resolver `getContent` hash to IPFS hash, and 
 
 ## Development 
 ```
-npm install
+npm run watch
 ```
 
 ## Build for Publishing
 ```
-npm run prod
+npm run deploy
 ```
