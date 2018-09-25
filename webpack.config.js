@@ -104,11 +104,6 @@ const config = {
         ]
     },
     plugins: [
-        new WebpackZipPlugin({
-            initialFile: './dist',
-            endPath: './',
-            zipName: 'dist.zip',
-        }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             title: 'Portal Network',
@@ -149,5 +144,13 @@ const config = {
         })
     ]
 };
-
+if(process.env.NODE_ENV === "production"){
+    config.plugins.push(
+        new WebpackZipPlugin({
+            initialFile: './dist',
+            endPath: './',
+            zipName: 'dist.zip',
+        })
+    )
+}
 module.exports = config;
