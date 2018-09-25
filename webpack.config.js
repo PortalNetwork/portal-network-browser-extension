@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const WebpackZipPlugin = require('webpack-zip-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -100,13 +101,14 @@ const config = {
                     'postcss-loader'
                 ]
             },
-            // {
-            //     test: /\.svg$/,
-            //     loader: 'svg-inline-loader'
-            // }
         ]
     },
     plugins: [
+        new WebpackZipPlugin({
+            initialFile: './dist',
+            endPath: './',
+            zipName: 'dist.zip',
+        }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             title: 'Portal Network',
