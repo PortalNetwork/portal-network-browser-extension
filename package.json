@@ -1,9 +1,11 @@
 {
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack --watch --mode development",
-    "deploy": "cross-env NODE_ENV=production webpack --mode production"
+    "deploy": "cross-env NODE_ENV=production webpack --mode production && node zipfile.js",
+    "zip": "node zipfile.js"
   },
   "devDependencies": {
+    "archiver": "^3.0.0",
     "autoprefixer": "^9.0.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -52,7 +54,6 @@
     "webpack": "^4.16.1",
     "webpack-cli": "^3.1.0",
     "webpack-manifest-plugin": "^2.0.3",
-    "webpack-zip-plugin": "^0.1.6",
     "websocket": "^1.0.28"
   }
 }

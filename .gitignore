@@ -7,3 +7,4 @@ app
 *.lnk
 /.sass-cache
 old
+*.zip

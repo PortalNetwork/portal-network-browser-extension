@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const WebpackZipPlugin = require('webpack-zip-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
@@ -144,13 +143,4 @@ const config = {
         })
     ]
 };
-if(process.env.NODE_ENV === "production"){
-    config.plugins.push(
-        new WebpackZipPlugin({
-            initialFile: './dist',
-            endPath: './',
-            zipName: 'dist.zip',
-        })
-    )
-}
 module.exports = config;
