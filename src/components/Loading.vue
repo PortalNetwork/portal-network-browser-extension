@@ -2,6 +2,7 @@
 import LogingLogo from "loginglogo.svg";
 import extension from "extensionizer";
 import resolver from '../lib/resolver';
+import UrlSearch from '../lib/UrlSearch';
 export default {
     components: {
         LogingLogo
@@ -12,21 +13,6 @@ export default {
         }
     },
     methods:{
-        UrlSearch () {
-            const strUrl = location.search;
-            let getPara, ParaVal;
-            let aryPara = [];
-            if (strUrl.indexOf('?') !== -1) {
-                let getSearch = strUrl.split('?')
-                getPara = getSearch[1].split('&')
-                for (let i = 0; i < getPara.length; i++) {
-                        ParaVal = getPara[i].split('=');
-                        aryPara.push(ParaVal[0]);
-                        aryPara[ParaVal[0]] = ParaVal[1];
-                }
-            }
-            return aryPara;
-        },
         updateUrl404(tabid){
             extension.tabs.update(tabid, { url: '404.html' });
         },
@@ -49,9 +35,9 @@ export default {
         }
     },
     mounted(){
-        const tabid = this.UrlSearch()['tabid'];
+        const tabid = UrlSearch()['tabid'];
         if (tabid === 'undefined') return this.updateUrl404(parseFloat(tabid));
-        const name = this.UrlSearch()['name'];
+        const name = UrlSearch()['name'];
         this.resolverUpdata(name, parseFloat(tabid));
         setTimeout(() => {
             this.updateUrl404(tabid);

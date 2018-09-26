@@ -12,7 +12,6 @@ const REGISTRY_ENS_MAIN_NET = "0x314159265dd8dbb310642f98f50c066173c1259b";
 const REGISTRY_ECNS_MAIN_NET = "0xb96836a066ef81ea038280c733f833f69c23efde";
 const REGISTRY_WNS_MAIN_NET = "0xee8d418fd33e69782015ea4313dfd8eb7b1b91ce";
 export const BNS = (name, tldidx)=> {
-
   const ProviderArr = [
     ENS_HttpProvider,
     ECNS_HttpProvider, 
@@ -33,6 +32,7 @@ export const BNS = (name, tldidx)=> {
       if (address === '0x0000000000000000000000000000000000000000') return reject(null);
       const Resolver = new web3.eth.Contract(abi.resolver, address);
       isMultihash = await Resolver.methods.supportsInterface('0xe89401a1').call();
+      console.log('isMultihash:',isMultihash);
       if(isMultihash){
         const mHash = await Resolver.methods.multihash(hash).call();
         if (mHash === '0x') return Promises.resolve(mHash);

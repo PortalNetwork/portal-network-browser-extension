@@ -2,12 +2,21 @@
   "scripts": {
     "watch": "cross-env NODE_ENV=development webpack --watch --mode development",
     "deploy": "cross-env NODE_ENV=production webpack --mode production && node zipfile.js",
-    "zip": "node zipfile.js"
+    "zip": "node zipfile.js",
+    "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.vue$": "vue-jest",
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.25",
     "archiver": "^3.0.0",
     "autoprefixer": "^9.0.0",
     "babel-core": "^6.26.3",
+    "babel-jest": "^23.6.0",
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
@@ -35,6 +44,7 @@
     "imagemin-gifsicle": "^5.2.0",
     "imagemin-jpegtran": "^5.0.2",
     "imagemin-pngquant": "^6.0.0",
+    "jest": "^23.6.0",
     "loader-utils": "^1.1.0",
     "multihashes": "^0.4.12",
     "node-sass": "^4.9.2",
@@ -47,6 +57,7 @@
     "url-parse": "^1.4.1",
     "vue": "^2.5.16",
     "vue-html-loader": "^1.2.4",
+    "vue-jest": "^2.6.0",
     "vue-loader": "^15.2.6",
     "vue-svg-loader": "^0.10.0",
     "vue-template-compiler": "^2.5.16",

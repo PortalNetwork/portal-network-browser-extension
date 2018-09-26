@@ -1,14 +1,13 @@
 <script>
+import UrlSearch from '../lib/UrlSearch';
 export default {
     data(){
         return {
-            nameDom: ""
+            nameDom: "domain"
         };
     },
     mounted(){
-        let index = location.href.lastIndexOf("?name=")
-        let name = location.href.slice(index + 6)
-        this.nameDom = name;
+        this.nameDom = UrlSearch()['name'];
     }
 };
 
