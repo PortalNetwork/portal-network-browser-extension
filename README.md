@@ -1,5 +1,7 @@
 # Portal Network Browser Extension
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/PortalNetwork/portal-network-browser-extension.svg)](https://greenkeeper.io/)
+
 ## Install
 
 [Install Link](https://chrome.google.com/webstore/detail/portal-network/apcnffelpkinnpoapmokieojaffmcpmf)
