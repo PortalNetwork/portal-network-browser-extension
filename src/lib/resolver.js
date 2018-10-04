@@ -1,14 +1,34 @@
 import { BNS } from "./Registrar";
-const tldArr = ['eth', 'etc', 'wan'];
+const BCNS_API_URL = 'http://bcns-rest.herokuapp.com/v1/dataRetrieval/BCNS/resolution/multihash';
+const TLD_LIST = ['eth', 'etc', 'wan'];
 
-function InquireIpfs(tld, name) {
-  let idx = tldArr.indexOf(tld);
-  if(idx === -1) return new Promise((resolve, reject) => reject(null));
-  return BNS(name, idx);
-}
 
-export default (name)=> {
-  const path = name.split(".");
-  const tld = path[path.length - 1];
-  return InquireIpfs(tld, name);
+export default (name) => {
+  const extractDomain = name.split(".");
+  const tld = extractDomain.pop();
+  const label = extractDomain.shift();
+
+  switch (tld) {
+    case 'eth':
+    case 'etc':
+    case 'wan':
+      const providerIndex = TLD_LIST.indexOf(tld);
+      return BNS(name, providerIndex);
+      break;
+    case 'bch':
+      const result = fetch(`${BCNS_API_URL}?domain=${label}`)
+        .then(response => {
+          if (response.ok) {
+            return response.json()
+          }
+          return new Promise((resolve, reject) => reject(null));
+        })
+        .catch(error => new Promise((resolve, reject) => reject(null)))
+        .then(result => new Promise((resolve, reject) => resolve(result.multihash)));
+      return result;
+      break;
+    default:
+      return new Promise((resolve, reject) => reject(null));
+      break;
+  }
 }
