@@ -1,2 +1,10 @@
-node_modules/
-dist/
+node_modules
+dist
+tmp
+ppt
+app
+.vscode
+*.lnk
+/.sass-cache
+old
+*.zip

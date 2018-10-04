@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>wan</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="wan" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wanchain" transform="translate(3.000000, 1.000000)">
+            <polygon id="Shape" fill="#1269AB" points="16.8643734 17.2830221 0 27.1852231 0 32.6273512 16.8643734 22.7253243 33.7286162 32.6273512 33.7286162 27.1852231"></polygon>
+            <polygon id="Shape" fill="#3FBCED" points="4.92707579 11.2769652 16.8643734 4.38508265 28.8014098 11.2769652 33.2580445 9.46492451 16.8643734 0 0.470745824 9.46492451"></polygon>
+            <path d="M28.8014098,12.4292392 L28.8014098,27.6695482 L27.0284094,28.6932985 L30.7939408,30.9041412 L33.7286162,29.2097 L33.7286162,10.425958 L28.8014098,12.4292392 Z M6.70025031,28.6932985 L4.91266964,27.6611047 L4.91266964,12.4234071 L0,10.4258275 L0,29.2097 L2.93467542,30.9041412 L6.70025031,28.6932985 Z" id="Shape" fill="#1269AB"></path>
+            <polygon id="Shape" fill="#3FBCED" points="25.9773266 29.3000104 16.8643734 34.5614307 7.75133311 29.3000104 3.98575823 31.5109838 16.8643734 38.9463827 29.742858 31.5109838"></polygon>
+        </g>
+    </g>
+</svg>

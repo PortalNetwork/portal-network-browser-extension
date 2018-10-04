@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>eth</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="eth" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ethereum" transform="translate(8.000000, 0.000000)" fill="#010101" fill-rule="nonzero">
+            <g id="Group" opacity="0.6" transform="translate(0.210401, 14.236315)">
+                <polygon id="Shape" points="11.8635955 0.0186095616 0.0279143424 5.40142525 11.8635955 12.393968 23.6946243 5.40142525"></polygon>
+            </g>
+            <g id="Group" opacity="0.45" transform="translate(0.210401, 0.000000)">
+                <polygon id="Shape" points="0.0279143424 19.6377399 11.8635955 26.6302826 11.8635955 0"></polygon>
+            </g>
+            <g id="Group" opacity="0.8" transform="translate(12.073997, 0.000000)">
+                <polygon id="Shape" points="0 0 0 26.6302826 11.8310288 19.6377399"></polygon>
+            </g>
+            <g id="Group" opacity="0.45" transform="translate(0.210401, 21.866235)">
+                <polygon id="Shape" points="0.0279143424 0.0139571712 11.8635955 16.6881244 11.8635955 7.00649994"></polygon>
+            </g>
+            <g id="Group" opacity="0.8" transform="translate(12.073997, 21.866235)">
+                <polygon id="Shape" points="0 7.00649994 0 16.6881244 11.8403336 0.0139571712"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
