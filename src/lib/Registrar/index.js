@@ -8,7 +8,7 @@ const abi = { registry, resolver };
 const ENS_HttpProvider = "https://mainnet.infura.io/";
 const ECNS_HttpProvider = "https://etc-parity.0xinfra.com";
 const WNS_HttpProvider = "http://wanchain.portal.network";
-const REGISTRY_ENS_MAIN_NET = "0x314159265dd8dbb310642f98f50c066173c1259b";
+const REGISTRY_ENS_MAIN_NET = "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e";
 const REGISTRY_ECNS_MAIN_NET = "0xb96836a066ef81ea038280c733f833f69c23efde";
 const REGISTRY_WNS_MAIN_NET = "0xee8d418fd33e69782015ea4313dfd8eb7b1b91ce";
 export const BNS = (name, tldidx)=> {
